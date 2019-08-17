@@ -7,4 +7,4 @@ steps:
     containerRegistry: 'docker.artifacts.karops.io'
     repository: 'kar/tdd/demo-app'
     command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile
+    Dockerfile: '**/Dockerfile'
