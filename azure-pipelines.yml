@@ -5,6 +5,6 @@ steps:
 - task: Docker@2
   inputs:
     containerRegistry: 'docker.artifacts.karops.io'
-    repository: 'kar/tdd/demo-app'
+    repository: 'kar/tdd/hello'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
