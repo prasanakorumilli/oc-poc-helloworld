@@ -1,0 +1,10 @@
+pool:
+  name: 'infrastructure-agents'
+
+steps:
+- task: Docker@2
+  inputs:
+    containerRegistry: 'docker.artifacts.karops.io'
+    repository: 'kar/tdd/hello'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
