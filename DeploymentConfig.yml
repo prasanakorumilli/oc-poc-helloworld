@@ -1,0 +1,40 @@
+kind: "DeploymentConfig"
+apiVersion: "v1"
+metadata:
+  name: "tdd-rw-DeploymentConfig"
+  annotations:
+     description: "Template for TDD Report Wrtier"
+objects:
+  - kind: DeploymentConfig
+    apiversion: v1
+    metadata:
+      name: tdd-rw
+      labels:
+        app: TDD
+    spec:
+      triggers:
+        - type: "Manual"
+      replicas: 4
+      selector:
+        app: tdd-rw
+      strategy:
+        type: Rolling
+      template:
+        metadata:
+         labels:
+           app: tdd-rw
+         name: tdd-rw
+        spec:
+         containers:
+         - name: tdd-rw
+           image: artifacts.karops.io/kar/tdd/test:40023
+           ports:
+           - containerPort: 8080
+             protocol: TCP 
+           resources:
+             requests:
+                cpu: "125M"
+                memory: "128Mi"
+             limits:
+                cpu: "250M"
+                memory: "256Mi"
