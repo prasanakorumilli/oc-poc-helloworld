@@ -27,7 +27,7 @@ objects:
         spec:
          containers:
          - name: reportwriter
-           image: artifacts.karops.io/kar/tdd/test:40023
+           image: artifacts.karops.io/kar/tdd/demo-app:40023
            ports:
            - containerPort: 8080
              protocol: TCP 
