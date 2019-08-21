@@ -8,7 +8,7 @@ objects:
   - kind: DeploymentConfig
     apiversion: v1
     metadata:
-      name: tdd-rw
+      name: reportwriter
       labels:
         app: TDD
     spec:
@@ -16,17 +16,17 @@ objects:
         - type: "Manual"
       replicas: 4
       selector:
-        app: tdd-rw
+        app: reportwriter
       strategy:
         type: Rolling
       template:
         metadata:
          labels:
-           app: tdd-rw
-         name: tdd-rw
+           app: reportwriter
+         name: reportwriter
         spec:
          containers:
-         - name: tdd-rw
+         - name: reportwriter
            image: artifacts.karops.io/kar/tdd/test:40023
            ports:
            - containerPort: 8080
